@@ -53,8 +53,8 @@ const App = ({ signOut, user }) => {
     <div className="App">
       <header className="App-header">
         <div className="auth">
-          <Heading flex="5" display="inline-flex" padding="10px" level={4}>User: {user.username}</Heading>
-          <Button flex="1" display="inline-flex" padding="10px" onClick={signOut}>Sign out</Button>
+          <Heading color="rgb(114, 161, 189)" flex="5"   display="inline-flex" padding="10px" level={4}>User: {user.username}</Heading>
+          <Button color="rgb(114, 161, 189)" flex="1" display="inline-flex" padding="10px" onClick={signOut}>Sign out</Button>
         </div>
         <h2>Stock de Vidrios</h2>  
       </header>
@@ -71,19 +71,31 @@ const App = ({ signOut, user }) => {
               </div>
             </Paper>
           {todos.map(todo => {
-            return (
-              <Paper variant="outlined" elevation={2}>
-                <div className="glassEntry">
-                  <div className="rack">{todo.rack}</div>
-                  <div className="slot">{todo.slot}</div>
-                  <div className="ancho">{todo.ancho}</div>
-                  <div className="alto">{todo.alto}</div>
-                  <div className="espesor">{todo.espesor}</div>
-                  <div className="dvh">{todo.dvh}</div>
-                  <div className="tipo">{todo.tipo}</div>
-                </div>
-              </Paper>
-            );
+            if(todo.presencia){   
+              let dvh;
+              console.log("dvh after let:" + dvh + typeof dvh);
+              console.log("todo.dvh:" + todo.dvh + typeof todo.dvh);         
+              if (todo.dvh){
+                dvh = 'SI';
+              }
+              else{
+                dvh = 'NO';
+              }
+              console.log("dvh after if:" + dvh + typeof dvh);
+              return (
+                <Paper variant="outlined" elevation={2}>
+                  <div className="glassEntry">
+                    <div className="rack">{todo.rack}</div>
+                    <div className="slot">{todo.slot}</div>
+                    <div className="ancho">{todo.ancho}</div>
+                    <div className="alto">{todo.alto}</div>
+                    <div className="espesor">{todo.espesor}</div>
+                    <div className="dvh">{dvh}</div>
+                    <div className="tipo">{todo.tipo}</div>
+                  </div>
+                </Paper>
+              );
+            }
           })}
         </div>
       </div>      
