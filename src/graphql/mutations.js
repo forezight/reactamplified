@@ -15,6 +15,7 @@ export const createTodo = /* GraphQL */ `
       dvh
       tipo
       presencia
+      peso
       id
       createdAt
       updatedAt
@@ -35,6 +36,7 @@ export const updateTodo = /* GraphQL */ `
       dvh
       tipo
       presencia
+      peso
       id
       createdAt
       updatedAt
@@ -55,6 +57,7 @@ export const deleteTodo = /* GraphQL */ `
       dvh
       tipo
       presencia
+      peso
       id
       createdAt
       updatedAt

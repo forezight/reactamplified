@@ -12,6 +12,7 @@ export const getTodo = /* GraphQL */ `
       dvh
       tipo
       presencia
+      peso
       id
       createdAt
       updatedAt
@@ -34,6 +35,7 @@ export const listTodos = /* GraphQL */ `
         dvh
         tipo
         presencia
+        peso
         id
         createdAt
         updatedAt

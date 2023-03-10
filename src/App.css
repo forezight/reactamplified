@@ -53,7 +53,7 @@
   flex-direction: column;
 }
 
-.rack , .slot , .ancho , .alto , .espesor , .dvh , .toprowflex1 {
+.rack , .slot , .ancho , .alto , .espesor , .dvh , .peso , .toprowflex1 {
   flex: 1;
 }
 

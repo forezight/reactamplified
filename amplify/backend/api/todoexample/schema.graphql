@@ -11,5 +11,6 @@ type Todo @model {
   dvh: Boolean
   tipo: String
   presencia: Boolean
+  peso: Float
 }
 

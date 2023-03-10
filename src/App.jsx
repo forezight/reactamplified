@@ -59,7 +59,7 @@ const App = ({ signOut, user }) => {
         <h2>Stock de Vidrios</h2>  
       </header>
       <div className="glassList">
-          <Paper variant="outlined" elevation={2}>
+          <Paper variant="outlined" elevation={0}>
             <div className="topRow">
                   <div className="toprowflex1">Rack</div>
                   <div className="toprowflex1">Slot</div>
@@ -67,6 +67,7 @@ const App = ({ signOut, user }) => {
                   <div className="toprowflex1">Alto</div>
                   <div className="toprowflex1">Espesor</div>
                   <div className="toprowflex1">DVH</div>
+                  <div className="toprowflex1">Peso</div>
                   <div className="toprowflex2">Tipo</div>
               </div>
             </Paper>
@@ -91,6 +92,7 @@ const App = ({ signOut, user }) => {
                     <div className="alto">{todo.alto}</div>
                     <div className="espesor">{todo.espesor}</div>
                     <div className="dvh">{dvh}</div>
+                    <div className="dvh">{todo.peso}</div>
                     <div className="tipo">{todo.tipo}</div>
                   </div>
                 </Paper>

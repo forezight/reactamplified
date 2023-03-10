@@ -1,0 +1,11 @@
+[33mcommit d3a6eb413bef19f366e815f1313f55b2740ab532[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: juli_laptop <juliangalante95@gmail.com>
+Date:   Sat Feb 18 22:49:45 2023 -0300
+
+    if statements added to display dvh booleans and presence booleans
+
+[33mcommit 89030f1cda9de40cc5fafb3e1e721de0899dd9ab[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: juli_laptop <juliangalante95@gmail.com>
+Date:   Thu Feb 16 17:36:42 2023 -0300
+
+    First commit. Working frontend first version. Backend not connected
