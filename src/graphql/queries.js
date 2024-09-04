@@ -16,6 +16,7 @@ export const getTodo = /* GraphQL */ `
       id
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
@@ -39,8 +40,10 @@ export const listTodos = /* GraphQL */ `
         id
         createdAt
         updatedAt
+        __typename
       }
       nextToken
+      __typename
     }
   }
 `;

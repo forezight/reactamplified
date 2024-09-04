@@ -4,8 +4,16 @@
     "apiName": "todoexample",
     "serviceName": "AppSync",
     "defaultAuthType": {
-      "mode": "API_KEY",
-      "expirationTime": 7
-    }
+      "mode": "AWS_IAM"
+    },
+    "conflictResolution": {},
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 365,
+        "apiKeyExpirationDate": "2025-08-27T22:27:20.777Z",
+        "keyDescription": "My API key"
+      }
+    ]
   }
 }

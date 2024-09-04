@@ -1,20 +1,30 @@
 /* src/App.jsx */
-import React, { useEffect, useState } from 'react'
-import { Amplify, API, graphqlOperation } from 'aws-amplify'
-import { createTodo } from './graphql/mutations'
-import { listTodos } from './graphql/queries'
+import React, { useEffect, useState } from 'react';
+import { Amplify } from 'aws-amplify';
+
+//OLD:
+//import { API, graphqlOperation } from 'aws-amplify';
+
+//NEW:
+import { generateClient } from 'aws-amplify/api';
+
+import { createTodo } from './graphql/mutations';
+import { listTodos } from './graphql/queries';
 
 import { withAuthenticator, Button, Heading } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 
-import awsExports from "./aws-exports";
+import amplifyconfig from './amplifyconfiguration.json';
 
 import Paper from '@mui/material/Paper';
 import './App.css';
 
-Amplify.configure(awsExports);
+Amplify.configure(amplifyconfig);
 
 const initialState = { name: '', description: '' }
+
+//NEW:
+const client = generateClient();
 
 const App = ({ signOut, user }) => {
   const [formState, setFormState] = useState(initialState)
@@ -30,7 +40,15 @@ const App = ({ signOut, user }) => {
 
   async function fetchTodos() {
     try {
-      const todoData = await API.graphql(graphqlOperation(listTodos)) 
+      //OLD:
+      //const todoData = await API.graphql(graphqlOperation(listTodos)) 
+      //NEW:
+      const todoData = await client.graphql({
+        query: listTodos,
+        authMode: 'API_KEY'
+      
+      });
+      //
       const todos = todoData.data.listTodos.items
       console.log('todos',todos)
       setTodos(todos)
@@ -43,7 +61,14 @@ const App = ({ signOut, user }) => {
       const todo = { ...formState }
       setTodos([...todos, todo])
       setFormState(initialState)
-      await API.graphql(graphqlOperation(createTodo, {input: todo}))
+      //await API.graphql(graphqlOperation(createTodo, {input: todo}))
+      //NEW:
+      await client.graphql({
+        query:createTodo,
+        variables: {input: todo},
+        authMode: 'API_KEY'
+    });
+
     } catch (err) {
       console.log('error creating todo:', err)
     }
@@ -56,7 +81,7 @@ const App = ({ signOut, user }) => {
           <Heading color="rgb(114, 161, 189)" flex="5"   display="inline-flex" padding="10px" level={4}>User: {user.username}</Heading>
           <Button color="rgb(114, 161, 189)" flex="1" display="inline-flex" padding="10px" onClick={signOut}>Sign out</Button>
         </div>
-        <h2>Stock de Vidrios</h2>  
+        <h2>Stock de Vidriosss</h2>  
       </header>
       <div className="glassList">
           <Paper variant="outlined" elevation={0}>

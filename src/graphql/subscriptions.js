@@ -2,8 +2,8 @@
 // this is an auto generated file. This will be overwritten
 
 export const onCreateTodo = /* GraphQL */ `
-  subscription OnCreateTodo {
-    onCreateTodo {
+  subscription OnCreateTodo($filter: ModelSubscriptionTodoFilterInput) {
+    onCreateTodo(filter: $filter) {
       rack
       slot
       ancho
@@ -16,12 +16,13 @@ export const onCreateTodo = /* GraphQL */ `
       id
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
 export const onUpdateTodo = /* GraphQL */ `
-  subscription OnUpdateTodo {
-    onUpdateTodo {
+  subscription OnUpdateTodo($filter: ModelSubscriptionTodoFilterInput) {
+    onUpdateTodo(filter: $filter) {
       rack
       slot
       ancho
@@ -34,12 +35,13 @@ export const onUpdateTodo = /* GraphQL */ `
       id
       createdAt
       updatedAt
+      __typename
     }
   }
 `;
 export const onDeleteTodo = /* GraphQL */ `
-  subscription OnDeleteTodo {
-    onDeleteTodo {
+  subscription OnDeleteTodo($filter: ModelSubscriptionTodoFilterInput) {
+    onDeleteTodo(filter: $filter) {
       rack
       slot
       ancho
@@ -52,6 +54,7 @@ export const onDeleteTodo = /* GraphQL */ `
       id
       createdAt
       updatedAt
+      __typename
     }
   }
 `;

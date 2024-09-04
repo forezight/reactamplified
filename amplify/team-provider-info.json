@@ -44,6 +44,9 @@
           "appId": "dlr7atw4ljwru",
           "type": "manual"
         }
+      },
+      "api": {
+        "todoexample": {}
       }
     }
   }
