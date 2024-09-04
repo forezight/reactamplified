@@ -1,0 +1,8 @@
+node -v
+v20.11.1
+npm -v
+10.2.4
+npx -v
+10.2.4
+amplify -v
+12.12.6
